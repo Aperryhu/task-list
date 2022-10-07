@@ -1,6 +1,6 @@
 class TasksController < ApplicationController
   def index
-    matching_tasks = Task.all
+    matching_tasks = Task.order(:created => :desc)
 
     @list_of_tasks = matching_tasks.order({ :created_at => :desc })
 
